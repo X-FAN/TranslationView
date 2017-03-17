@@ -71,24 +71,24 @@ public class TranslationView extends FrameLayout {
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         final int action = MotionEventCompat.getActionMasked(ev);
-        switch (action){
-            case MotionEvent.ACTION_DOWN:{
-                if(mIsShow&&inShadow(ev)){
+        switch (action) {
+            case MotionEvent.ACTION_DOWN: {
+                if (mIsShow && inShadow(ev)) {
                     hide();
                     return true;
                 }
             }
         }
-        return  super.onInterceptTouchEvent(ev);
+        return super.onInterceptTouchEvent(ev);
     }
 
     private boolean inShadow(MotionEvent ev) {
         float x = ev.getX();
         float y = ev.getY();
         final float leftEdge = mTranslationView.getX();
-        final float rightEdge = leftEdge+mTranslationView.getWidth();
-        final float topEdge =mTranslationView.getHeight();
-        final float bottomEdge = getHeight()+topEdge;
+        final float rightEdge = leftEdge + mTranslationView.getWidth();
+        final float topEdge = mTranslationView.getHeight();
+        final float bottomEdge = getHeight() + topEdge;
         return x > leftEdge && x < rightEdge && y > topEdge && y < bottomEdge;
     }
 
@@ -96,14 +96,16 @@ public class TranslationView extends FrameLayout {
     public void show() {
         if (!mIsShow) {
             mIsShow = true;
-            mShowAni = ObjectAnimator.ofFloat(mTranslationView, "translationY", mTranslationView.getTranslationY(), mTranslationView.getHeight());
-            mShowAni.addListener(new AnimatorListenerAdapter() {
-                @Override
-                public void onAnimationStart(Animator animation) {
-                    super.onAnimationStart(animation);
-                    invalidate();
-                }
-            });
+            if (mShowAni == null) {
+                mShowAni = ObjectAnimator.ofFloat(mTranslationView, "translationY", mTranslationView.getTranslationY(), mTranslationView.getHeight());
+                mShowAni.addListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationStart(Animator animation) {
+                        super.onAnimationStart(animation);
+                        invalidate();
+                    }
+                });
+            }
             mShowAni.start();
         }
     }
