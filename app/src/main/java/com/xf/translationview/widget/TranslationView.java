@@ -17,6 +17,8 @@ public class TranslationView extends FrameLayout {
     private boolean mIsShow = false;
 
     private View mTranslationView;
+    private ObjectAnimator mShowAni;
+    private ObjectAnimator mHideAni;
 
 
     public TranslationView(Context context) {
@@ -33,6 +35,7 @@ public class TranslationView extends FrameLayout {
 
     @Override
     protected void onFinishInflate() {
+        super.onFinishInflate();
         if (getChildCount() != 2) {
             throw new IllegalStateException("only and should contain two child view");
         }
@@ -57,30 +60,32 @@ public class TranslationView extends FrameLayout {
     public void show() {
         if (!mIsShow) {
             mIsShow = true;
-            ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(mTranslationView, "translationY", mTranslationView.getTranslationY(), mTranslationView.getHeight());
-            objectAnimator.addListener(new AnimatorListenerAdapter() {
+            mShowAni = ObjectAnimator.ofFloat(mTranslationView, "translationY", mTranslationView.getTranslationY(), mTranslationView.getHeight());
+            mShowAni.addListener(new AnimatorListenerAdapter() {
                 @Override
                 public void onAnimationStart(Animator animation) {
                     super.onAnimationStart(animation);
                     invalidate();
                 }
             });
-            objectAnimator.start();
+            mShowAni.start();
         }
     }
 
     public void hide() {
         if (mIsShow) {
             mIsShow = false;
-            ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(mTranslationView, "translationY", mTranslationView.getTranslationY(), -mTranslationView.getHeight());
-            objectAnimator.addListener(new AnimatorListenerAdapter() {
-                @Override
-                public void onAnimationEnd(Animator animation) {
-                    super.onAnimationEnd(animation);
-                    invalidate();
-                }
-            });
-            objectAnimator.start();
+            if (mHideAni == null) {
+                mHideAni = ObjectAnimator.ofFloat(mTranslationView, "translationY", mTranslationView.getTranslationY(), -mTranslationView.getHeight());
+                mHideAni.addListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        super.onAnimationEnd(animation);
+                        invalidate();
+                    }
+                });
+            }
+            mHideAni.start();
         }
     }
 
