@@ -84,7 +84,7 @@ public class TranslationView extends FrameLayout {
                 mTranslationView.layout(0, mH, mTranslationView.getWidth(), mH + mTranslationView.getHeight());
                 break;
             case START:
-                mTranslationView.layout(-mW, 0, 0, mTranslationView.getHeight());
+                mTranslationView.layout(-mTranslationView.getWidth(), 0, 0, mTranslationView.getHeight());
                 break;
             case END:
                 mTranslationView.layout(mW, 0, mW + mTranslationView.getWidth(), mTranslationView.getHeight());
