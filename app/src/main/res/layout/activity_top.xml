@@ -14,7 +14,7 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimary" />
 
-    <com.xf.translationview.widget.TranslationView
+    <com.xf.tranlationview.TranslationView
         android:id="@+id/translation"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -35,7 +35,7 @@
             android:gravity="center"
             android:text="Test"
             android:textSize="40sp" />
-    </com.xf.translationview.widget.TranslationView>
+    </com.xf.tranlationview.TranslationView>
 
     <LinearLayout
         android:layout_width="match_parent"

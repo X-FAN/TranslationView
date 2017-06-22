@@ -1,4 +1,4 @@
-package com.xf.translationview.widget;
+package com.xf.tranlationview;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -13,8 +13,6 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
-
-import com.xf.translationview.R;
 
 public class TranslationView extends FrameLayout {
     public static final String START = "start";

@@ -7,7 +7,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.xf.translationview.widget.TranslationView;
+import com.xf.tranlationview.TranslationView;
+
 
 /**
  * Created by X-FAN on 2017/6/1.
