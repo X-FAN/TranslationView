@@ -1,5 +1,18 @@
 # TranslationView
+
 **Usage**
+
+```xml
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+
+```
+compile 'com.github.X-FAN:TranslationView:v1.0.0'
+```
 
 ```java
 translationView.show();
@@ -10,6 +23,3 @@ translationView.setShadowColor(ActivityCompat.getColor(MainActivity.this, R.colo
 **Gif** 
 
 ![Alt Text](https://github.com/X-FAN/resource/blob/master/gif/TranslationView.gif)
-
-
-
