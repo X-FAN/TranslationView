@@ -37,7 +37,7 @@ public class EndActivity extends AppCompatActivity {
         findViewById(R.id.show).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                translationView.show();
+                translationView.show(0);
             }
         });
         findViewById(R.id.hide).setOnClickListener(new View.OnClickListener() {

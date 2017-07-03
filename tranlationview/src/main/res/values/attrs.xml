@@ -2,5 +2,6 @@
 <resources>
     <declare-styleable name="TranslationView">
         <attr name="direction" format="string" />
+        <attr name="duration" format="integer" />
     </declare-styleable>
 </resources>

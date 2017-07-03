@@ -35,6 +35,16 @@
             android:gravity="center"
             android:text="Test"
             android:textSize="40sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:text="Test1"
+            android:textColor="@android:color/white"
+            android:textSize="40sp" />
+
     </com.xf.tranlationview.TranslationView>
 
     <LinearLayout
@@ -47,6 +57,17 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="show" />
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/show1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="show1" />
 
         <Space
             android:layout_width="10dp"

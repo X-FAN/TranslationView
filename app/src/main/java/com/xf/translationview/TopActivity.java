@@ -37,7 +37,13 @@ public class TopActivity extends AppCompatActivity {
         findViewById(R.id.show).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                translationView.show();
+                translationView.show(0);
+            }
+        });
+        findViewById(R.id.show1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                translationView.show(1);
             }
         });
         findViewById(R.id.hide).setOnClickListener(new View.OnClickListener() {
