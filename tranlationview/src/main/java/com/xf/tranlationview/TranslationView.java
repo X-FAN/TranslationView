@@ -32,10 +32,7 @@ public class TranslationView extends FrameLayout {
     private int mW;
     private int mH;
     private int mShowPosition = NONE;
-    private boolean mIsShow = false;
 
-    private ObjectAnimator mShowAni;
-    private ObjectAnimator mHideAni;
     private List<ObjectAnimator> mShowAnis = new ArrayList<>();
     private List<ObjectAnimator> mHideAnis = new ArrayList<>();
     private List<View> mMenus = new ArrayList<>();
